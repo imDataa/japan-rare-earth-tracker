@@ -1,21 +1,21 @@
 # Japan Rare Earth Tracker
 
-Dashboard automatisé de suivi des valeurs japonaises liées aux terres rares,
-mis à jour quotidiennement via GitHub Actions.
+Automated dashboard tracking Japanese rare earth stocks,
+updated daily via GitHub Actions.
 
-## Données suivies
-- Prix et variation journalière (Yahoo Finance)
-- Corrélation 90 jours avec l'ETF de référence 2646.T
-- Actualités par titre (Google News RSS)
+## Data
+- Daily price and variation (Yahoo Finance)
+- 90-day correlation with reference ETF 2646.T
+- Latest news per stock (Google News RSS)
 
 ## Stack
-- Python 3.12 — collecte des données
-- HTML / CSS / JS — dashboard statique
-- GitHub Actions — exécution quotidienne automatique
-- GitHub Pages — hébergement
+- Python 3.12 — data collection
+- HTML / CSS / JS — static dashboard
+- GitHub Actions — daily automation
+- GitHub Pages — hosting
 
-## Titres suivis
-| Ticker | Société |
+## Tracked Stocks
+| Ticker | Company |
 |--------|---------|
 | 5713.T | Sumitomo Metal Mining |
 | 7011.T | Mitsubishi Heavy Industries |
@@ -26,4 +26,4 @@ mis à jour quotidiennement via GitHub Actions.
 | 5711.T | Mitsubishi Materials |
 | 5016.T | JX Advanced Metals |
 | 4063.T | Shin-Etsu Chemical |
-| 2646.T | Global X Japan Metal ETF *(référence)* |
+| 2646.T | Global X Japan Metal ETF *(reference)* |
