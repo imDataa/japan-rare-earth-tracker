@@ -33,4 +33,4 @@ jobs:
           python tracker.py
           git add index.html
           git diff --staged --quiet || git commit -m "Update tracker $(date +'%Y-%m-%d')"
-          git push origin HEAD:main
+          git push --force-with-lease origin HEAD:main
