@@ -271,7 +271,7 @@ html = f"""<!DOCTYPE html>
   background: rgba(224, 82, 82, 0.15);
   border: 1px solid rgba(224, 82, 82, 0.4);
   }}
-  .badge-fort {{ color: var(--teal); border-color: rgba(34,200,168,0.3); background: rgba(34,200,168,0.07); }}
+  .badge-strong {{ color: var(--teal); border-color: rgba(34,200,168,0.3); background: rgba(34,200,168,0.07); }}
   .badge-moyen {{ color: var(--gold); border-color: rgba(212,168,67,0.3); background: rgba(212,168,67,0.07); }}
   .badge-faible {{ color: var(--red); border-color: rgba(224,82,82,0.3); background: rgba(224,82,82,0.07); }}
   .carte-corr-row {{
@@ -378,13 +378,13 @@ body::before {{
     <h1>Japan Rare Earth <span>Tracker</span></h1>
   </div>
   <div class="header-date">
-    Dernière mise à jour<br><strong>{date_maj}</strong>
+    Last updated<br><strong>{date_maj}</strong>
   </div>
 </header>
   <div id="etf-hero"></div>
 
 <div class="section-header" style="margin-bottom: 16px;">
-  <span class="section-title">Composants · Mini-ETF</span>
+  <span class="section-title">Stocks · Mini-ETF</span>
   <div class="section-line"></div>
 </div>
 <div id="contenu" class="grille"></div>
@@ -398,9 +398,9 @@ body::before {{
     const container = document.getElementById("contenu");
 
     function corrInfo(c) {{
-  if (c >= 0.75) return {{ label: "Fort", classe: "badge-fort" }};
-  if (c >= 0.55) return {{ label: "Modéré", classe: "badge-moyen" }};
-  return {{ label: "Faible", classe: "badge-faible" }};
+  if (c >= 0.75) return {{ label: "Strong", classe: "badge-strong" }};
+  if (c >= 0.55) return {{ label: "Moderate", classe: "badge-moderate" }};
+  return {{ label: "Weak", classe: "badge-weak" }};
 }}
 
 const titreActu = document.createElement("div");
@@ -427,15 +427,15 @@ DATA.forEach(t => {{
     <div class="carte-prix">¥${{t.prix}} <span class="variation-badge ${{couleur}}">${{signe}}${{t.variation}}%</span></div>
     <div class="etf-stats">
       <div class="etf-stat">
-        <span class="etf-stat-label">Marché</span>
+        <span class="etf-stat-label">Market</span>
         <span class="etf-stat-value">TSE</span>
       </div>
       <div class="etf-stat">
-        <span class="etf-stat-label">Devise</span>
+        <span class="etf-stat-label">Currency</span>
         <span class="etf-stat-value">JPY</span>
       </div>
       <div class="etf-stat">
-        <span class="etf-stat-label">Titres</span>
+        <span class="etf-stat-label">Holdings</span>
         <span class="etf-stat-value">30</span>
       </div>
     </div>
@@ -456,7 +456,7 @@ document.getElementById("etf-hero").appendChild(carte);
       </div>
       <div class="carte-prix">¥${{t.prix}} <span class="variation-badge ${{couleur}}">${{signe}}${{t.variation}}%</span></div>
       <div class="carte-corr-row">
-        <span class="corr-label">CORR 90J</span>
+        <span class="corr-label">90D CORR</span>
         <div class="corr-bar-bg">
           <div class="corr-bar-fill ${{corr.classe}}" style="width: ${{Math.round(t.correlation * 100)}}%"></div>
         </div>
@@ -490,8 +490,8 @@ DATA.forEach(t => {{
   </script>
   <footer>
   <span>Japan Rare Earth Tracker · <strong>imData</strong> </span>
-  <span>Données : Yahoo Finance · Actualités : Google News RSS</span>
-  <span class="footer-dot">● Données actualisées</span>
+  <span>Data : Yahoo Finance · News : Google News RSS</span>
+  <span class="footer-dot">● Data updated</span>
 </footer>
 </body>
 </html>"""
