@@ -24,12 +24,16 @@ jobs:
       - name: Install dependencies
         run: pip install requests pandas feedparser
 
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
       - name: Run tracker and push
         run: |
           git config user.name "github-actions"
           git config user.email "actions@github.com"
-          git pull origin main
           python tracker.py
           git add index.html
           git diff --staged --quiet || git commit -m "Update tracker $(date +'%Y-%m-%d')"
-          git push origin main
+          git push origin HEAD:main
